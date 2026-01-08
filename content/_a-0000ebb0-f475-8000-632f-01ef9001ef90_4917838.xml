@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000ebb0-f475-8000-632f-01ef9001ef90_4949755</versionUuid>
+    <interface>
+        <name>GSA_SEC_chatCompletion</name>
+        <uuid>_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917838</uuid>
+        <description>Interface that takes in parameters to return Groq's chat completion via the integration</description>
+        <parentUuid>4cf1da51-8011-48c4-9221-71a9c65d1f08</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!content,
+  local!model,
+  local!maxTokens,
+  local!temperature,
+  local!topP,
+  local!stopSequence,
+  local!result,
+  local!ChatCompletions: {},
+  local!isSuccess: false,
+  local!showStatusCard: false,
+  local!error,
+  {
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "",
+      contents: {
+        #"SYSTEM_SYSRULES_columnsLayout"(
+          columns: {
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                /*Prompt*/
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Content",
+                  instructions: "Text input as the starting point for generating the response.",
+                  value: local!content,
+                  saveInto: local!content,
+                  required: true
+                ),
+                /*Temperature*/
+                #"SYSTEM_SYSRULES_floatingPointField"(
+                  label: "Temperature",
+                  instructions: "Controls randomness: Lowering results in less random completions. As the temperature approaches 0, the model will become deterministic and repetitive.",
+                  value: local!temperature,
+                  saveInto: local!temperature,
+                  required: false
+                ),
+                /*Top P*/
+                #"SYSTEM_SYSRULES_floatingPointField"(
+                  label: "Top P",
+                  instructions: "A method of text generation where a model will only consider the most probable next tokens that make up the probability p. 0.5 means half of all likelihood-weighted options are considered.",
+                  value: local!topP,
+                  saveInto: local!topP,
+                  required: false
+                )
+
+              }
+            ),
+            #"SYSTEM_SYSRULES_columnLayout"(
+              contents: {
+                /*Model*/
+                #"SYSTEM_SYSRULES_dropdownField_v1"(
+                  choiceLabels: {"LLaMA3-8b", "LLaMA3-70b", "LLaMA2-70b","Mixtral-8x7b", "Gemma-7b-it" },
+                  choiceValues: {
+                    #"_a-0000ebb0-f475-8000-632f-01ef9001ef90_4949704",
+                    #"_a-0000ebb0-f475-8000-632f-01ef9001ef90_4949716",
+                    #"_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917850",
+                    #"_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917844",
+                    #"_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917862"
+                  },
+                  label: "Model",
+                  instructions: "The language model which will perform the completion.",
+                  placeholder: "Select Groq Model",
+                  value: local!model,
+                  saveInto: local!model,
+                  required: true
+                ),
+                /*Max Tokens to sample*/
+                #"SYSTEM_SYSRULES_integerField"(
+                  label: "Max Tokens",
+                  instructions: "The maximum number of tokens that the model can process in a single response. This limits ensures computational efficiency and resource management.",
+                  value: local!maxTokens,
+                  saveInto: local!maxTokens,
+                  required: false
+                ),
+                /*Top K*/
+                #"SYSTEM_SYSRULES_textField"(
+                  label: "Stop Sequence",
+                  instructions: "A stop sequence is a predefined or user-specified text string that signals an AI to stop generating content, ensuring its responses remain focused and concise.",
+                  value: local!stopSequence,
+                  saveInto: local!stopSequence,
+                  required: false
+                )
+
+              }
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_ButtonLayout"(
+          primaryButtons: {
+            #"SYSTEM_SYSRULES_buttonWidget_v1"(
+              label: "Get Completion",
+              saveInto: {
+                a!save(
+                  local!result,
+                  #"95a7e00f-c2ac-4d93-bc72-8af00bb13f0c"(
+                    model: local!model,
+                    content: local!content,
+                    temperature: local!temperature,
+                    maxTokens: local!maxTokens,
+                    topP: local!topP,
+                    stopSequence: local!stopSequence
+                  )
+                ),
+                a!save(
+                  local!isSuccess,
+                  index(local!result, "success", false())
+                ),
+                a!save(local!showStatusCard, true),
+                if(
+                  local!isSuccess,
+                  a!save(
+                    local!ChatCompletions,
+                    index(
+                    index(
+                      index(
+                        index(
+                          index(local!result, "result", {}),
+                          "responseBody",
+                          {}
+                        ),
+                        "choices",
+                        {}
+                      ),
+                      "message",
+                      {}
+                    ),
+                    "content",
+                    {}
+                  )
+                  ),
+                  {}
+                ),
+                a!save(
+                  local!error,
+                  index(local!result, "error", {})
+
+                )
+              },
+              style: "SOLID",
+              validate: true
+            )
+          },
+          secondaryButtons: {
+            #"SYSTEM_SYSRULES_buttonWidget_v1"(
+              label: "clear",
+              saveInto: {
+                a!save(
+                  {
+                    local!content,
+                    local!model,
+                    local!maxTokens,
+                    local!temperature,
+                    local!topP,
+                    local!stopSequence,
+                    local!result,
+                    local!completions: {},
+                  },
+                  null
+                ),
+                a!save(local!showStatusCard, false())
+              },
+              validate: false
+            )
+          }
+        ),
+        #"_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917885"(
+          showCard: local!showStatusCard,
+          isSuccess: local!isSuccess,
+          error: local!error,
+          completions: local!ChatCompletions
+        )
+      }
+    )
+  }
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917984"/>
+        <historyInfo versionUuid="_a-0000ebb0-f475-8000-632f-01ef9001ef90_4949755"/>
+    </history>
+</contentHaul>

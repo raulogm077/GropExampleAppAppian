@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siteHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>1d29767c-7fe5-4040-af61-5bd405d066f4</versionUuid>
+  <site a:uuid="e8f38143-52ed-408f-9c6e-3b0c10910617" name="GSA Groq Demo">
+    <description>Demo site to show the Groq integration</description>
+    <urlStub>groq-demo</urlStub>
+    <page a:uuid="485e76db-3796-4e53-b170-2aa54181b582">
+      <staticName>Home</staticName>
+      <description/>
+      <urlStub>home</urlStub>
+      <uiObject a:uuid="_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917903" xsi:type="a:ContentFreeformRule"/>
+      <iconId>f016</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>STANDARD</pageWidth>
+      <areUrlParamsEncrypted>true</areUrlParamsEncrypted>
+      <autoContextUpdateEnabled>false</autoContextUpdateEnabled>
+    </page>
+    <visibility>268435456</visibility>
+    <headerBackgroundColor>#FF5733</headerBackgroundColor>
+    <selectedTabBackgroundColor>#000000</selectedTabBackgroundColor>
+    <faviconRef a:uuid="SYSTEM_CONTENT_SITES_DEFAULT_FAVICON" xsi:type="a:CollaborationDocument"/>
+    <logoRef a:uuid="SYSTEM_CONTENT_SITES_DEFAULT_LOGO" xsi:type="a:CollaborationDocument"/>
+    <accentColor>#000000</accentColor>
+    <showName>false</showName>
+    <tempoLinkVisibility>HIDDEN</tempoLinkVisibility>
+    <showRecordNews>true</showRecordNews>
+    <tasksInSitesVisibility>HIDDEN</tasksInSitesVisibility>
+    <buttonShape>SQUARED</buttonShape>
+    <navigationBarStyle>STYLE1</navigationBarStyle>
+    <inputShape>SQUARED</inputShape>
+    <isSystem>false</isSystem>
+    <displayName>Groq Demo</displayName>
+    <isStaticDisplayName>true</isStaticDisplayName>
+    <nameExprIsEvaluable>true</nameExprIsEvaluable>
+    <primaryNavLayoutType>TOPBAR</primaryNavLayoutType>
+    <buttonLabelCase>UPPERCASE</buttonLabelCase>
+    <dialogShape>SQUARED</dialogShape>
+  </site>
+  <roleMap>
+    <role name="site_administrator">
+      <users/>
+      <groups>
+        <groupUuid>387ab181-9011-45a6-a77a-777a61e900ac</groupUuid>
+      </groups>
+    </role>
+    <role name="site_viewer">
+      <users/>
+      <groups>
+        <groupUuid>8b46e528-22d8-407c-9be6-6e8f08cdc9a9</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="1d29767c-7fe5-4040-af61-5bd405d066f4"/>
+  </history>
+</siteHaul>

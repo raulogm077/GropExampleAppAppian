@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000ed51-dfd1-8000-9bb4-011c48011c48_8688</versionUuid>
+    <outboundIntegration>
+        <name>GSA_ChatCompletion</name>
+        <uuid>95a7e00f-c2ac-4d93-bc72-8af00bb13f0c</uuid>
+        <description>GSA Chat Completion Integration</description>
+        <parentUuid>4cf1da51-8011-48c4-9221-71a9c65d1f08</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition></definition>
+        <namedTypedValue>
+            <name>model</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>content</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>temperature</name>
+            <type>
+                <name>double</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>maxTokens</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>topP</name>
+            <type>
+                <name>double</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>stopSequence</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <sharedConfigParameters>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </sharedConfigParameters>
+        <configParameters>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <types xsi:type="a:Dictionary">
+                    <RootType xsi:type="a:Dictionary">
+                        <properties xsi:type="a:Dictionary?list">
+                            <item>
+<description xsi:nil="true" xsi:type="a:Null"/>
+<refresh xsi:type="xsd:string">NEVER</refresh>
+<placeholder xsi:nil="true" xsi:type="a:Null"/>
+<isImportCustomizable xsi:type="xsd:boolean">false</isImportCustomizable>
+<instructionText xsi:type="xsd:string">The language model which will perform the completion. See the list of models at https://console.groq.com/docs/models</instructionText>
+<isExpressionable xsi:type="xsd:boolean">false</isExpressionable>
+<choices xsi:type="a:Dictionary?list">
+    <item>
+        <name xsi:type="xsd:string">llama-3.1-8b-instant</name>
+        <value xsi:type="xsd:string">llama-3.1-8b-instant</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">llama-3.3-70b-versatile</name>
+        <value xsi:type="xsd:string">llama-3.3-70b-versatile</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">llama-3.2-90b-vision-preview</name>
+        <value xsi:type="xsd:string">llama-3.2-90b-vision-preview</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">whisper-large-v3</name>
+        <value xsi:type="xsd:string">whisper-large-v3</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">llama-3.2-1b-preview</name>
+        <value xsi:type="xsd:string">llama-3.2-1b-preview</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">llama-3.2-11b-vision-preview</name>
+        <value xsi:type="xsd:string">llama-3.2-11b-vision-preview</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">llama-3.3-70b-specdec</name>
+        <value xsi:type="xsd:string">llama-3.3-70b-specdec</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">deepseek-r1-distill-llama-70b</name>
+        <value xsi:type="xsd:string">deepseek-r1-distill-llama-70b</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">distil-whisper-large-v3-en</name>
+        <value xsi:type="xsd:string">distil-whisper-large-v3-en</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">gemma2-9b-it</name>
+        <value xsi:type="xsd:string">gemma2-9b-it</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">whisper-large-v3-turbo</name>
+        <value xsi:type="xsd:string">whisper-large-v3-turbo</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">llama-3.2-3b-preview</name>
+        <value xsi:type="xsd:string">llama-3.2-3b-preview</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">llama3-70b-8192</name>
+        <value xsi:type="xsd:string">llama3-70b-8192</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">llama-guard-3-8b</name>
+        <value xsi:type="xsd:string">llama-guard-3-8b</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">llama3-8b-8192</name>
+        <value xsi:type="xsd:string">llama3-8b-8192</value>
+    </item>
+    <item>
+        <name xsi:type="xsd:string">mixtral-8x7b-32768</name>
+        <value xsi:type="xsd:string">mixtral-8x7b-32768</value>
+    </item>
+</choices>
+<label xsi:type="xsd:string">Model</label>
+<isRequired xsi:type="xsd:boolean">true</isRequired>
+<displayHint xsi:type="xsd:string">NORMAL</displayHint>
+<hasTransientChoices xsi:type="xsd:boolean">false</hasTransientChoices>
+<key xsi:type="xsd:string">model</key>
+<isHidden xsi:type="xsd:boolean">false</isHidden>
+<isMasked xsi:type="xsd:boolean">false</isMasked>
+<isReadOnly xsi:type="xsd:boolean">false</isReadOnly>
+<type xsi:type="xsd:string">STRING</type>
+                            </item>
+                            <item>
+<description xsi:nil="true" xsi:type="a:Null"/>
+<refresh xsi:type="xsd:string">NEVER</refresh>
+<placeholder xsi:nil="true" xsi:type="a:Null"/>
+<isImportCustomizable xsi:type="xsd:boolean">false</isImportCustomizable>
+<instructionText xsi:type="xsd:string">The text of a message sent to Groq.</instructionText>
+<isExpressionable xsi:type="xsd:boolean">true</isExpressionable>
+<label xsi:type="xsd:string">Content</label>
+<isRequired xsi:type="xsd:boolean">true</isRequired>
+<displayHint xsi:type="xsd:string">NORMAL</displayHint>
+<hasTransientChoices xsi:type="xsd:boolean">false</hasTransientChoices>
+<key xsi:type="xsd:string">content</key>
+<isHidden xsi:type="xsd:boolean">false</isHidden>
+<isMasked xsi:type="xsd:boolean">false</isMasked>
+<isReadOnly xsi:type="xsd:boolean">false</isReadOnly>
+<type xsi:type="xsd:string">STRING</type>
+                            </item>
+                            <item>
+<description xsi:nil="true" xsi:type="a:Null"/>
+<refresh xsi:type="xsd:string">NEVER</refresh>
+<placeholder xsi:nil="true" xsi:type="a:Null"/>
+<isImportCustomizable xsi:type="xsd:boolean">false</isImportCustomizable>
+<instructionText xsi:type="xsd:string">Controls randomness of responses. A lower temperature leads to more predictable outputs while a higher temperature results in more varies and sometimes more creative outputs.</instructionText>
+<isExpressionable xsi:type="xsd:boolean">true</isExpressionable>
+<label xsi:type="xsd:string">Temperature</label>
+<isRequired xsi:type="xsd:boolean">false</isRequired>
+<displayHint xsi:type="xsd:string">NORMAL</displayHint>
+<key xsi:type="xsd:string">temperature</key>
+<isHidden xsi:type="xsd:boolean">false</isHidden>
+<isReadOnly xsi:type="xsd:boolean">false</isReadOnly>
+<type xsi:type="xsd:string">DOUBLE</type>
+                            </item>
+                            <item>
+<description xsi:nil="true" xsi:type="a:Null"/>
+<refresh xsi:type="xsd:string">NEVER</refresh>
+<placeholder xsi:nil="true" xsi:type="a:Null"/>
+<isImportCustomizable xsi:type="xsd:boolean">false</isImportCustomizable>
+<instructionText xsi:type="xsd:string">The maximum number of tokens that the model can process in a single response. This limits ensures computational efficiency and resource management.</instructionText>
+<isExpressionable xsi:type="xsd:boolean">true</isExpressionable>
+<label xsi:type="xsd:string">Max Tokens</label>
+<isRequired xsi:type="xsd:boolean">false</isRequired>
+<displayHint xsi:type="xsd:string">NORMAL</displayHint>
+<key xsi:type="xsd:string">maxTokens</key>
+<isHidden xsi:type="xsd:boolean">false</isHidden>
+<isReadOnly xsi:type="xsd:boolean">false</isReadOnly>
+<type xsi:type="xsd:string">INTEGER</type>
+                            </item>
+                            <item>
+<description xsi:nil="true" xsi:type="a:Null"/>
+<refresh xsi:type="xsd:string">NEVER</refresh>
+<placeholder xsi:nil="true" xsi:type="a:Null"/>
+<isImportCustomizable xsi:type="xsd:boolean">false</isImportCustomizable>
+<instructionText xsi:type="xsd:string">A method of text generation where a model will only consider the most probable next tokens that make up the probability p. 0.5 means half of all likelihood-weighted options are considered.</instructionText>
+<isExpressionable xsi:type="xsd:boolean">true</isExpressionable>
+<label xsi:type="xsd:string">Top P</label>
+<isRequired xsi:type="xsd:boolean">false</isRequired>
+<displayHint xsi:type="xsd:string">NORMAL</displayHint>
+<key xsi:type="xsd:string">topP</key>
+<isHidden xsi:type="xsd:boolean">false</isHidden>
+<isReadOnly xsi:type="xsd:boolean">false</isReadOnly>
+<type xsi:type="xsd:string">DOUBLE</type>
+                            </item>
+                            <item>
+<description xsi:nil="true" xsi:type="a:Null"/>
+<refresh xsi:type="xsd:string">NEVER</refresh>
+<placeholder xsi:nil="true" xsi:type="a:Null"/>
+<isImportCustomizable xsi:type="xsd:boolean">false</isImportCustomizable>
+<instructionText xsi:type="xsd:string">A stop sequence is a predefined or user-specified text string that signals an AI to stop generating content, ensuring its responses remain focused and concise.</instructionText>
+<isExpressionable xsi:type="xsd:boolean">true</isExpressionable>
+<label xsi:type="xsd:string">Stop Sequence</label>
+<isRequired xsi:type="xsd:boolean">false</isRequired>
+<displayHint xsi:type="xsd:string">NORMAL</displayHint>
+<hasTransientChoices xsi:type="xsd:boolean">false</hasTransientChoices>
+<key xsi:type="xsd:string">stop</key>
+<isHidden xsi:type="xsd:boolean">false</isHidden>
+<isMasked xsi:type="xsd:boolean">false</isMasked>
+<isReadOnly xsi:type="xsd:boolean">false</isReadOnly>
+<type xsi:type="xsd:string">STRING</type>
+                            </item>
+                        </properties>
+                        <name xsi:type="xsd:string">RootType</name>
+                    </RootType>
+                </types>
+                <state xsi:type="a:Dictionary">
+                    <topP xsi:type="a:Expression">ri!topP</topP>
+                    <a:entry key="#t" xsi:type="xsd:string">#/types/RootType</a:entry>
+                    <temperature xsi:type="a:Expression">ri!temperature</temperature>
+                    <maxTokens xsi:type="a:Expression">ri!maxTokens</maxTokens>
+                    <stop xsi:type="a:Expression">ri!stopSequence</stop>
+                    <model xsi:type="xsd:string">llama-3.1-8b-instant</model>
+                    <content xsi:type="a:Expression">ri!content</content>
+                </state>
+                <connectedSystemTemplateKey xsi:type="xsd:string"/>
+            </a:Dictionary>
+        </configParameters>
+        <isWrite>false</isWrite>
+        <integrationType>plugin.[com.appiancorp.cto.groq].[GroqConnectedSystemTemplate].[GroqIntegrationTemplate].READ</integrationType>
+        <connectedSystemUuid>_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917809</connectedSystemUuid>
+        <isConnectedSystemConnectionOptionSelected>true</isConnectedSystemConnectionOptionSelected>
+        <integrationOutputs>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <outputs xsi:type="a:IntegrationOutput?list"/>
+            </a:Dictionary>
+        </integrationOutputs>
+        <isRequestResponseLoggingEnabled>false</isRequestResponseLoggingEnabled>
+    </outboundIntegration>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">null</a:value>
+                    <a:nameRef>model</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">null</a:value>
+                    <a:nameRef>content</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">null</a:value>
+                    <a:nameRef>temperature</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">null</a:value>
+                    <a:nameRef>maxTokens</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">null</a:value>
+                    <a:nameRef>topP</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">null</a:value>
+                    <a:nameRef>stopSequence</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:assertions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            </el>
+        </value>
+    </typedValue>
+    <history>
+        <historyInfo versionUuid="_a-0000ebb0-f475-8000-632f-01ef9001ef90_4926271"/>
+        <historyInfo versionUuid="_a-0000ebb0-f475-8000-632f-01ef9001ef90_4949790"/>
+        <historyInfo versionUuid="_a-0000ed51-dfd1-8000-9bb4-011c48011c48_8688"/>
+    </history>
+</contentHaul>

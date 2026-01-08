@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<connectedSystemHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000ed51-dfd1-8000-9bb4-011c48011c48_8772</versionUuid>
+    <connectedSystem>
+        <name>GSA CS Groq</name>
+        <uuid>_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917809</uuid>
+        <description>Groq Connected System</description>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <sharedConfigParameters>
+            <a:Dictionary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                <configurationDescriptor xsi:type="a:Dictionary">
+                    <types xsi:type="a:Dictionary">
+                        <RootType xsi:type="a:Dictionary">
+                            <properties xsi:type="a:Dictionary?list">
+<item>
+    <description xsi:type="xsd:string">For more information visit: https://console.groq.com/keys</description>
+    <refresh xsi:type="xsd:string">NEVER</refresh>
+    <placeholder xsi:nil="true" xsi:type="a:Null"/>
+    <isImportCustomizable xsi:type="xsd:boolean">true</isImportCustomizable>
+    <instructionText xsi:type="xsd:string">Please provide API Key obtained from Groq</instructionText>
+    <isExpressionable xsi:type="xsd:boolean">false</isExpressionable>
+    <label xsi:type="xsd:string">Groq API Key</label>
+    <isRequired xsi:type="xsd:boolean">true</isRequired>
+    <displayHint xsi:type="xsd:string">NORMAL</displayHint>
+    <key xsi:type="xsd:string">apiKey</key>
+    <isHidden xsi:type="xsd:boolean">false</isHidden>
+    <isMasked xsi:type="xsd:boolean">true</isMasked>
+    <isReadOnly xsi:type="xsd:boolean">false</isReadOnly>
+    <type xsi:type="xsd:string">ENCRYPTED</type>
+</item>
+                            </properties>
+                            <name xsi:type="xsd:string">RootType</name>
+                        </RootType>
+                    </types>
+                    <state xsi:type="a:Dictionary">
+                        <a:entry key="#t" xsi:type="xsd:string">#/types/RootType</a:entry>
+                        <apiKey xsi:type="a:EncryptedText"/>
+                    </state>
+                    <connectedSystemTemplateKey xsi:type="xsd:string">GroqConnectedSystemTemplate</connectedSystemTemplateKey>
+                </configurationDescriptor>
+                <url xsi:type="xsd:string"/>
+                <isInheritedUrlOptionSelected xsi:type="xsd:boolean">false</isInheritedUrlOptionSelected>
+                <isCstOAuth xsi:type="xsd:boolean">false</isCstOAuth>
+                <authType xsi:type="xsd:string">CSTF Auth</authType>
+                <authDetails xsi:type="a:Variant?list"/>
+            </a:Dictionary>
+        </sharedConfigParameters>
+        <logoChoice></logoChoice>
+        <integrationType>plugin.[com.appiancorp.cto.groq].[GroqConnectedSystemTemplate]</integrationType>
+    </connectedSystem>
+    <roleMap public="true">
+        <role inherit="false" allowForAll="false" name="readers">
+            <users/>
+            <groups>
+                <groupUuid>8b46e528-22d8-407c-9be6-6e8f08cdc9a9</groupUuid>
+            </groups>
+        </role>
+        <role inherit="false" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="administrators">
+            <users/>
+            <groups>
+                <groupUuid>387ab181-9011-45a6-a77a-777a61e900ac</groupUuid>
+            </groups>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917835"/>
+        <historyInfo versionUuid="_a-0000ebb0-f475-8000-632f-01ef9001ef90_4927898"/>
+        <historyInfo versionUuid="_a-0000ed51-dfd1-8000-9bb4-011c48011c48_8695"/>
+        <historyInfo versionUuid="_a-0000ed51-dfd1-8000-9bb4-011c48011c48_8772"/>
+    </history>
+</connectedSystemHaul>

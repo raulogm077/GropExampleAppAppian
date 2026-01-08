@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917940</versionUuid>
+    <interface>
+        <name>GSA_SEC_Home</name>
+        <uuid>_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917903</uuid>
+        <description>Home interface for the sample application</description>
+        <parentUuid>4cf1da51-8011-48c4-9221-71a9c65d1f08</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_headerContentLayout"(
+  header: {
+    #"SYSTEM_SYSRULES_billboardLayout_v1"(
+      backgroundMedia: #"SYSTEM_SYSRULES_documentImage"(
+        document: #"_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917921"
+      ),
+      backgroundColor: "#f0f0f0",
+      height: "SHORT_PLUS",
+      marginBelow: "NONE"
+    )
+  },
+  contents: {
+    #"SYSTEM_SYSRULES_sectionLayout_v1"(
+      label: "",
+      contents: {
+        #"_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917838"()
+      }
+    )
+  }
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000ebb0-f475-8000-632f-01ef9001ef90_4917940"/>
+    </history>
+</contentHaul>
